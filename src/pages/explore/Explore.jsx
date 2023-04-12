@@ -7,8 +7,8 @@ import "./style.scss";
 
 import useFetch from "../../customHook/useFetch";
 import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
-import MovieCard from "../../components/movieCard/MovieCard";
-import Spinner from "../../components/spinner/Spinner";
+import MovieCard from "../../components/MovieCard/MovieCard";
+import Spinner from "../../components/Spinner/Spinner";
 import { fetchDatafromApi } from "../../utils/api";
 
 let filters = {};
