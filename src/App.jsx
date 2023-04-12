@@ -3,7 +3,7 @@ import { fetchDatafromApi } from "./utils/api";
 import { useDispatch, useSelector } from "react-redux";
 import { getApiConfiguration,getGenres } from "./store/home";
 
-import Header from "./components/header/Header";
+import Header from "./components/Header/Header";
 import Footer from "./components/footer/Footer";
 import Home from "./pages/Home/Home";
 import Details from "./pages/details/Details";
@@ -15,7 +15,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 function App() {
   const dispatch = useDispatch();
   const urlData = useSelector((state) => state.home.url);
-  console.log(urlData.total_results, "data");
   useEffect(() => {
     apidata();
     genresCall();
@@ -45,11 +44,9 @@ function App() {
     });
 
     const data = await Promise.all(promises);
-    console.log(data, "new sursh");
     data.map(({genres}) => {
       return genres.map((item) => (allGenres[item.id] = item));
     });
-    console.log(allGenres,'all');
     dispatch(getGenres(allGenres))
   };
   return (

@@ -22,7 +22,6 @@ const Carousel = ({ title, data, loading, endPoints }) => {
   const { url } = useSelector((state) => state.home);
   const navigator = (dir) => {
     const containter = carouselContainer.current;
-    console.log(containter, "containtercontainter");
     const scrollAmount =
       dir === "left"
         ? containter.scrollLeft - (containter.offsetWidth + 20)
@@ -32,7 +31,6 @@ const Carousel = ({ title, data, loading, endPoints }) => {
       left: scrollAmount,
       behavior: "smooth",
     });
-    console.log(scrollAmount, "scrollAmount");
   };
   const skItem = () => {
     return (

@@ -5,11 +5,11 @@ import Select from "react-select";
 
 import "./style.scss";
 
-import useFetch from "../../hooks/useFetch";
-import { fetchDataFromApi } from "../../utils/api";
+import useFetch from "../../customHook/useFetch";
 import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
 import MovieCard from "../../components/movieCard/MovieCard";
 import Spinner from "../../components/spinner/Spinner";
+import { fetchDatafromApi } from "../../utils/api";
 
 let filters = {};
 
@@ -38,7 +38,7 @@ const Explore = () => {
 
     const fetchInitialData = () => {
         setLoading(true);
-        fetchDataFromApi(`/discover/${mediaType}`, filters).then((res) => {
+        fetchDatafromApi(`/discover/${mediaType}`, filters).then((res) => {
             setData(res);
             setPageNum((prev) => prev + 1);
             setLoading(false);
